@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'IBMPlexSans';
+    src: url('IBMPlexSans-Regular.ttf');
+}
+
+body {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    justify-content: center;
+}
+
+#app {
+    font-family: 'IBMPlexSans';
+    height: 30rem; 
+    border-radius: 0.625rem;
+    display: inline-flex;
+    padding: 2rem 3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+    background: #191729;
+    min-width: 36rem;
+}
+
+p {
+    user-select: none;
+}
+
+.container {
+    height: 100%; 
+    width: 100%;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    align-content: space-between;
+}
+
+.container p {
+    font-family: 'IBMPlexSans';
+    color: #FFF;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.top {
+    z-index: 3;
+    width: 100%;
+    background-color: #191729;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.top p {
+    color: #FFF;
+    text-align: center;
+    font-family: 'IBMPlexSans';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+}
+
+.center {
+    height: auto;
+    align-content: center;
+    width: 100%;
+}
+
+.center p{
+    top: 10rem;
+    position: relative;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.part {
+    width: 4.375rem;
+    display: grid;
+    justify-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.tube {
+    cursor: pointer;
+    display: flex;
+    width: 4.125rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    align-self: stretch;
+    border-radius: 0rem 0rem 1.25rem 1.25rem;
+    border: 0.125rem solid #3C3762;
+    justify-content: flex-end;
+}
+
+.circle,
+.circleTop {
+    width: 3.125rem; 
+    height: 3.125rem; 
+    border-radius: 3.125rem; 
+}
+
+.circleTop{
+    margin-bottom: 0.5rem;
+}
+
+.red {
+    background: #C386FF;
+}
+
+.pink {
+    background: #9F79C5;
+}
+
+.blue {
+    background: #E5CCFF;
+}
+
+.green {
+    background: #C9F;
+}
+
+.orange {
+    background: #B266FF;
+}
+
+.lime {
+    background: #93F;
+}
+
+.purple {
+    background: #60C;
+}
+
+.brown {
+    background: #723FF3;
+}
+
+.cyan {
+    background: #885DF5;
+}
+
+.gray {
+    background: #581BF1;
+}
+
+.inactive {
+    background-color: transparent;
+}
+
+.progressBar {
+    width: 30rem;
+    height: 0.625rem;
+    border-radius: 0.3125rem;
+    background-color: rgba(60, 55, 98, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 0.3125rem;
+    background-color: rgba(133, 120, 233, 1);
+    animation: roundtime calc(var(--duration) * 1s) linear forwards;
+    transform-origin: left center;
+}
+
+.beforeContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.beforeProgres {
+    background: #3C3762;
+    width: 30rem;
+    height: 0.625rem;
+    border-radius: 0.3125rem;
+    bottom: -250%;
+    overflow: hidden;
+}
+
+.beforeBar {
+    height: 0.625rem;
+    border-radius: 0.3125rem;
+    background: rgba(133, 120, 233, 1);
+    animation: roundtime calc(var(--duration) * 1s) linear forwards;
+    transform-origin: left center;
+}
+
+.disable {
+    display: none !important;
+}
+
+@keyframes roundtime {
+    to {
+        transform: scaleX(0);
+    }
+}

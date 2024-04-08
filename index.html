@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" v-show="isVisible">
+          <section class="container">
+            <div class="top disable">
+                <p>ARRANGE THE COLORS</p>
+            </div>
+            <div class="center">
+                <p class="beforeText">Get ready</p>
+                <p class="showWin disable">Hack successful</p>
+                <p class="showLoss disable">Hack failed</p>
+                <div class="main disable">
+                    <div v-for="(part, partIndex) in parts" :key="partIndex" class="part">
+                        <div ref="myCircleTop" class="circleTop" :class="part.topCircleClass"></div>
+                        <div ref="myTube" class="tube" @click="addCircleClass(partIndex)">
+                            <div v-for="(circle, circleIndex) in part.circles" :key="circleIndex" class="circle" :class="circle"></div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="bottom">
+                <div class="beforeContainer">
+                    <div class="beforeProgres">
+                        <div class="beforeBar" style="--duration: 2;"></div>
+                    </div>
+                    <div class="shadowContainer" style="--duration: 2;"></div>
+                </div>
+                <div class="afterBottom disable">
+                    <div class="progressBar" :style="{ '--duration': animationDuration }">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="endGame disable">
+                    <div class="progressBar" style="--duration: 2;">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+          </section>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
